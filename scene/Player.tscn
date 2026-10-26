@@ -27,15 +27,43 @@ texture = ExtResource("2_y30ri")
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_vcqee")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=711051139]
+[node name="Ground" type="StaticBody2D" parent="." unique_id=711051139]
 position = Vector2(574, 612)
 scale = Vector2(9.142445, 0.25456858)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1105372672]
+[node name="Sprite2D" type="Sprite2D" parent="Ground" unique_id=1105372672]
 texture = ExtResource("2_y30ri")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1460675986]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1460675986]
+position = Vector2(0.16407776, -3.9282227)
+scale = Vector2(0.99999946, 0.99999946)
+shape = SubResource("RectangleShape2D_7qqr1")
+
+[node name="Wall_Right" type="StaticBody2D" parent="." unique_id=616755897]
+position = Vector2(1128, 309)
+rotation = 1.5603534
+scale = Vector2(9.142445, 0.25456858)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall_Right" unique_id=1500814920]
+texture = ExtResource("2_y30ri")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Right" unique_id=1391825078]
+position = Vector2(0.16407776, -3.9282227)
+scale = Vector2(0.99999946, 0.99999946)
+shape = SubResource("RectangleShape2D_7qqr1")
+
+[node name="Wall_Left" type="StaticBody2D" parent="." unique_id=1972031712]
+position = Vector2(0, 298.00003)
+rotation = 1.5603534
+scale = Vector2(9.142445, 0.25456858)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall_Left" unique_id=1948943338]
+texture = ExtResource("2_y30ri")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Left" unique_id=1449119844]
 position = Vector2(0.16407776, -3.9282227)
 scale = Vector2(0.99999946, 0.99999946)
 shape = SubResource("RectangleShape2D_7qqr1")
