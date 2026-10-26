@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://3wt4mi08m6pr"]
 
-[ext_resource type="Script" uid="uid://b72qxhrk6x88n" path="res://Player_Move.gd" id="1_kpjcp"]
-[ext_resource type="Texture2D" uid="uid://co1n3sdp7chwl" path="res://icon.svg" id="1_xhfnw"]
+[ext_resource type="Script" uid="uid://b72qxhrk6x88n" path="res://script/Player_Move.gd" id="1_y30ri"]
+[ext_resource type="Texture2D" uid="uid://co1n3sdp7chwl" path="res://icon.svg" id="2_y30ri"]
+[ext_resource type="PackedScene" uid="uid://bfc4eq4gw3xpw" path="res://scene/npc.tscn" id="3_waelg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vcqee"]
 size = Vector2(134, 132)
@@ -11,13 +12,16 @@ size = Vector2(129.17775, 141.41565)
 
 [node name="Node" type="Node" unique_id=2081921115]
 
+[node name="NPC" parent="." unique_id=1303772977 instance=ExtResource("3_waelg")]
+position = Vector2(693, 411)
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1392243983]
-position = Vector2(577, 423)
-script = ExtResource("1_kpjcp")
+position = Vector2(97, 481)
+script = ExtResource("1_y30ri")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1826573680]
-texture = ExtResource("1_xhfnw")
+texture = ExtResource("2_y30ri")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=170475335]
 position = Vector2(1, 0)
@@ -29,7 +33,7 @@ scale = Vector2(9.142445, 0.25456858)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1105372672]
-texture = ExtResource("1_xhfnw")
+texture = ExtResource("2_y30ri")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1460675986]
 position = Vector2(0.16407776, -3.9282227)
