@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://c58dqm3senb2x"]
+
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_ers22"]
+[ext_resource type="Script" uid="uid://botnvgu27p8fv" path="res://Moveplayer.gd" id="1_ukj82"]
+[ext_resource type="Script" uid="uid://djmuukkbgqnav" path="res://UI_npc.gd" id="3_8pym0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kn8ml"]
+size = Vector2(128, 129)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcqee"]
+size = Vector2(127.934814, 156.24939)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkq4d"]
+size = Vector2(154, 138)
+
+[node name="Node" type="Node" unique_id=2023065067]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1607623630]
+position = Vector2(571, 236)
+scale = Vector2(1.0016184, 0.96272546)
+script = ExtResource("1_ukj82")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1137664621]
+texture = ExtResource("1_ers22")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1232265162]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_kn8ml")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=198917726]
+position = Vector2(580, 429)
+scale = Vector2(9.2, 0.16000003)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1933056656]
+texture = ExtResource("1_ers22")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1082212555]
+position = Vector2(0.05435562, -3.1247559)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_vcqee")
+
+[node name="NPC" type="Area2D" parent="." unique_id=889857778]
+position = Vector2(1098, 342)
+script = ExtResource("3_8pym0")
+dialog_text = "Halo"
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="NPC" unique_id=1633849390]
+texture = ExtResource("1_ers22")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC" unique_id=785279013]
+position = Vector2(-7, -1)
+shape = SubResource("RectangleShape2D_lkq4d")
+
+[node name="PromptLabel" type="Label" parent="NPC" unique_id=1067355642]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -19.0
+offset_top = -130.0
+offset_right = 31.0
+offset_bottom = -81.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 35
+text = "[E]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="NPC" unique_id=173495167]
+
+[node name="PanelContainer" type="PanelContainer" parent="NPC/CanvasLayer" unique_id=1385739357]
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="NPC/CanvasLayer/PanelContainer" unique_id=19067619]
+layout_mode = 2
+text = "Hello"
+horizontal_alignment = 1
+vertical_alignment = 1
