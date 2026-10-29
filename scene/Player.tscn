@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://b72qxhrk6x88n" path="res://script/Player_Move.gd" id="1_y30ri"]
 [ext_resource type="Texture2D" uid="uid://co1n3sdp7chwl" path="res://icon.svg" id="2_y30ri"]
 [ext_resource type="PackedScene" uid="uid://bfc4eq4gw3xpw" path="res://scene/npc.tscn" id="3_waelg"]
-[ext_resource type="PackedScene" uid="uid://ddlsv556ohhmk" path="res://scene/Item.tscn" id="5_waelg"]
 [ext_resource type="Script" uid="uid://bkm8ge45sknt8" path="res://script/canvas_layer.gd" id="4_waelg"]
+[ext_resource type="PackedScene" uid="uid://ddlsv556ohhmk" path="res://scene/Item.tscn" id="5_waelg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vcqee"]
 size = Vector2(134, 132)
