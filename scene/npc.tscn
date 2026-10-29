@@ -1,9 +1,8 @@
-[gd_scene format=3 uid="uid://bfc4eq4gw3xpw"]
+[gd_scene format=3 uid="uid://dck781uqixr72"]
 
 [ext_resource type="Texture2D" uid="uid://dddsyg718o41s" path="res://NPC/Idle-Sheet.png" id="1_54ctn"]
 [ext_resource type="Script" uid="uid://dgipi5vektr0i" path="res://script/npc.gd" id="1_ab2no"]
 [ext_resource type="Texture2D" uid="uid://cy8l4qtfbbwn" path="res://NPC/Run-Sheet.png" id="2_ab2no"]
-[ext_resource type="Script" uid="uid://c23hr3xihcgu5" path="res://script/NPC_Logic.gd" id="4_8oust"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8oust"]
 atlas = ExtResource("1_54ctn")
@@ -23,27 +22,27 @@ region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_04kj1"]
 atlas = ExtResource("2_ab2no")
-region = Rect2(0, 30, 64, 34)
+region = Rect2(0, 32, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_co7e6"]
 atlas = ExtResource("2_ab2no")
-region = Rect2(64, 30, 64, 34)
+region = Rect2(64, 32, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_37thx"]
 atlas = ExtResource("2_ab2no")
-region = Rect2(128, 30, 64, 34)
+region = Rect2(128, 32, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eitvi"]
 atlas = ExtResource("2_ab2no")
-region = Rect2(192, 30, 64, 34)
+region = Rect2(192, 32, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kigg8"]
 atlas = ExtResource("2_ab2no")
-region = Rect2(256, 30, 64, 34)
+region = Rect2(256, 32, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4vd3j"]
 atlas = ExtResource("2_ab2no")
-region = Rect2(320, 30, 64, 34)
+region = Rect2(320, 32, 64, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xrivr"]
 animations = [{
@@ -88,55 +87,40 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2nt2"]
+size = Vector2(19, 29.666668)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
-size = Vector2(19.333334, 29.333336)
+size = Vector2(48, 29)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkq4d"]
-size = Vector2(19.333334, 29.333336)
-
-[node name="NPC" type="CharacterBody2D" unique_id=1303772977]
+[node name="NPC" type="CharacterBody2D" unique_id=1777808064]
 scale = Vector2(3, 3)
 script = ExtResource("1_ab2no")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1669039043]
+[node name="Label" type="Label" parent="." unique_id=738156065]
+texture_filter = 1
+offset_left = -5.0
+offset_top = -29.333334
+offset_right = 5.0
+offset_bottom = -17.333334
+theme_override_font_sizes/font_size = 8
+text = "[E]"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1554772709]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_xrivr")
 animation = &"idle"
-frame_progress = 0.32565787
+frame_progress = 0.53440005
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1336897229]
-position = Vector2(0.33333302, 1.3333337)
+[node name="colli_badan" type="CollisionShape2D" parent="." unique_id=970392000]
+position = Vector2(0.16666603, 1.1666665)
+shape = SubResource("RectangleShape2D_l2nt2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=394368090]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1197858065]
+position = Vector2(-0.3333324, 1.1666665)
 shape = SubResource("RectangleShape2D_xrivr")
-disabled = true
 
-[node name="Area2D" type="Area2D" parent="." unique_id=2041509708]
-script = ExtResource("4_8oust")
-npc_id = "1"
-npc_name = "Willy"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=977998920]
-position = Vector2(0.33333302, 1.3333337)
-shape = SubResource("RectangleShape2D_lkq4d")
-
-[node name="PromptLabel" type="Label" parent="Area2D" unique_id=1933033062]
-offset_left = -5.333333
-offset_top = -25.333332
-offset_right = 34.666668
-offset_bottom = -2.333332
-scale = Vector2(0.58666635, 0.50666666)
-text = "[E]"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Area2D" unique_id=288072413]
-
-[node name="PanelContainer" type="PanelContainer" parent="Area2D/CanvasLayer" unique_id=1575724710]
-offset_left = -99.99999
-offset_top = -166.99998
-offset_right = -59.999992
-offset_bottom = -126.999985
-scale = Vector2(4.957556, 3.1629863)
-
-[node name="Label" type="Label" parent="Area2D/CanvasLayer/PanelContainer" unique_id=2034368410]
-layout_mode = 2
-text = "hallo"
-horizontal_alignment = 1
-vertical_alignment = 1
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

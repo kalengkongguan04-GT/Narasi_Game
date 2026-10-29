@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://co1n3sdp7chwl" path="res://icon.svg" id="1_gycaw"]
 [ext_resource type="Script" uid="uid://d11n4dp3nyhhb" path="res://script/Door.gd" id="2_4wspe"]
 [ext_resource type="Script" uid="uid://v4auss35lncw" path="res://script/Level.gd" id="3_ydvtk"]
-[ext_resource type="PackedScene" uid="uid://1j34ppc8w0fw" path="res://scene/Player.tscn" id="4_gpifu"]
 [ext_resource type="PackedScene" uid="uid://c51dkqwoar3bs" path="res://scene/item_2.tscn" id="5_3ljv3"]
 [ext_resource type="PackedScene" uid="uid://bmyk3ccrdnlg2" path="res://scene/item_1.tscn" id="5_o1gum"]
-[ext_resource type="PackedScene" uid="uid://bfc4eq4gw3xpw" path="res://scene/npc.tscn" id="7_o1gum"]
+[ext_resource type="PackedScene" uid="uid://dck781uqixr72" path="res://scene/npc.tscn" id="7_kj6bu"]
+[ext_resource type="PackedScene" uid="uid://bfc4eq4gw3xpw" path="res://scene/player.tscn" id="7_o1gum"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4wspe"]
 size = Vector2(129.17775, 141.41565)
@@ -88,12 +88,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Item_2" parent="." unique_id=1709886450 instance=ExtResource("5_3ljv3")]
+position = Vector2(19, -217)
 
 [node name="Item_1" parent="." unique_id=402625060 instance=ExtResource("5_o1gum")]
 position = Vector2(-319, -149)
-
-[node name="Player" parent="." unique_id=226554058 instance=ExtResource("4_gpifu")]
-position = Vector2(126, 510)
 
 [node name="Spawns" type="Node2D" parent="." unique_id=684661808]
 
@@ -102,5 +100,7 @@ modulate = Color(1, 0, 0, 1)
 position = Vector2(930, 514)
 gizmo_extents = 36.3
 
-[node name="NPC" parent="." unique_id=1303772977 instance=ExtResource("7_o1gum")]
-position = Vector2(655, 544)
+[node name="player" parent="." unique_id=506976123 instance=ExtResource("7_o1gum")]
+
+[node name="NPC" parent="." unique_id=1777808064 instance=ExtResource("7_kj6bu")]
+position = Vector2(577, 540)
