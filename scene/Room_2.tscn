@@ -12,6 +12,7 @@ size = Vector2(129.17775, 141.41565)
 size = Vector2(129.17775, 141.41565)
 
 [node name="Room" type="Node2D" unique_id=2146386048]
+script = ExtResource("2_akra1")
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=1602588797]
 position = Vector2(574, 612)
@@ -57,7 +58,7 @@ shape = SubResource("RectangleShape2D_punrv")
 [node name="Door-2" type="Area2D" parent="." unique_id=619835429]
 script = ExtResource("2_punrv")
 target_scene = "uid://bu70e17sovlvu"
-target_spawn = "Spwan_1"
+target_spawn = "spawn_1"
 
 [node name="Sprite2D" type="Sprite2D" parent="Door-2" unique_id=401459109]
 position = Vector2(1060, 423.00003)
@@ -83,11 +84,42 @@ text = "[E]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Spawn_2" type="Marker2D" parent="." unique_id=20545562]
-modulate = Color(0.92, 0, 0, 1)
-position = Vector2(934, 519)
-gizmo_extents = 30.0
-script = ExtResource("2_akra1")
+[node name="Door-Ending" type="Area2D" parent="." unique_id=629802579]
+position = Vector2(-962, 4)
+script = ExtResource("2_punrv")
+target_scene = "uid://bwqaqx8cf06p7"
+target_spawn = "Spawn_ending"
+
+[node name="Sprite2D" type="Sprite2D" parent="Door-Ending" unique_id=1284944169]
+position = Vector2(1060, 423.00003)
+rotation = 1.5603534
+scale = Vector2(2.471999, 0.77746284)
+texture = ExtResource("1_3te36")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door-Ending" unique_id=678699826]
+position = Vector2(1063.0581, 423.37372)
+rotation = 1.5603534
+scale = Vector2(2.4719975, 0.7774624)
+shape = SubResource("RectangleShape2D_akra1")
+
+[node name="PromptLabel" type="Label" parent="Door-Ending" unique_id=1069855088]
+offset_left = 1025.0
+offset_top = 217.0
+offset_right = 1065.0
+offset_bottom = 245.0
+rotation = 0.0030682087
+scale = Vector2(1.7485193, 1.3221006)
+theme_override_font_sizes/font_size = 20
+text = "[E]"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Player" parent="." unique_id=226554058 instance=ExtResource("4_1ot36")]
 position = Vector2(930, 512)
+
+[node name="Spawns" type="Node2D" parent="." unique_id=2117987457]
+
+[node name="spawn_2" type="Marker2D" parent="Spawns" unique_id=20545562]
+modulate = Color(0.92, 0, 0, 1)
+position = Vector2(934, 519)
+gizmo_extents = 30.0

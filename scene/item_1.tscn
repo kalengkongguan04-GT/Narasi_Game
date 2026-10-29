@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bmyk3ccrdnlg2"]
+
+[ext_resource type="Script" uid="uid://cbehmnktr0b3l" path="res://script/Item.gd" id="1_q35qr"]
+[ext_resource type="Texture2D" uid="uid://co1n3sdp7chwl" path="res://icon.svg" id="2_0mlmn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkq4d"]
+size = Vector2(140, 139)
+
+[node name="Item_1" type="Area2D" unique_id=402625060]
+script = ExtResource("1_q35qr")
+item_id = "1"
+item_name = "Tes_1"
+score_value = 4
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1050207743]
+position = Vector2(577, 385)
+scale = Vector2(0.68991464, 0.54239744)
+texture = ExtResource("2_0mlmn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1193532515]
+position = Vector2(577, 382.5)
+scale = Vector2(0.68991464, 0.54239744)
+shape = SubResource("RectangleShape2D_lkq4d")
+
+[node name="PromptLabel" type="Label" parent="." unique_id=194056654]
+offset_left = 552.0
+offset_top = 284.0
+offset_right = 592.0
+offset_bottom = 307.0
+text = "[E]"
+horizontal_alignment = 1
+vertical_alignment = 1

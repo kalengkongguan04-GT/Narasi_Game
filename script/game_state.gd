@@ -1,4 +1,10 @@
+#BUAT NYIMPEN DATA GAME KIBALTNYA SYSTEM
+
 extends Node
+
+const GOOD_REQUIRED_ITEMS: Array[String] = ["Tes_1", "Tes#2"]
+const GOOD_MIN_SCORE := 5
+const BAD_MAX_SCORE := 0
 
 signal item_collected(id: String)
 signal flag_changed(id: String, value: bool)
@@ -26,13 +32,16 @@ func get_flag(id: String) -> bool:
 	return flags.get(id, false)
 
 func get_ending() -> String:
-	# SEMENTARA: ganti syaratnya sesuai dokumen cerita
-	if has_item("surat_rahasia") and score >= 5:
+	var has_all_required := true
+	for id: String in GOOD_REQUIRED_ITEMS:
+		if not has_item(id):
+			has_all_required = false
+
+	if has_all_required and score >= GOOD_MIN_SCORE:
 		return "good"
-	elif score >= 0:
-		return "neutral"
-	else:
+	if score <= BAD_MAX_SCORE:
 		return "bad"
+	return "neutral"
 
 func reset() -> void:
 	items.clear()
