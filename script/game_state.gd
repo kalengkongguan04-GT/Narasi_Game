@@ -6,6 +6,7 @@ signal flag_changed(id: String, value: bool)
 var items: Dictionary = {}
 var flags: Dictionary = {}
 var score: int = 0
+var next_spawn: String = ""   # titik muncul pemain di ruangan berikutnya
 
 func collect_item(id: String, value: int = 0) -> void:
 	if items.has(id):
@@ -37,3 +38,4 @@ func reset() -> void:
 	items.clear()
 	flags.clear()
 	score = 0
+	next_spawn = ""

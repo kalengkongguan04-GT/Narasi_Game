@@ -1,102 +1,24 @@
-[gd_scene format=3 uid="uid://3wt4mi08m6pr"]
+[gd_scene format=3 uid="uid://1j34ppc8w0fw"]
 
 [ext_resource type="Script" uid="uid://b72qxhrk6x88n" path="res://script/Player_Move.gd" id="1_y30ri"]
 [ext_resource type="Texture2D" uid="uid://co1n3sdp7chwl" path="res://icon.svg" id="2_y30ri"]
-[ext_resource type="PackedScene" uid="uid://bfc4eq4gw3xpw" path="res://scene/npc.tscn" id="3_waelg"]
-[ext_resource type="Script" uid="uid://bkm8ge45sknt8" path="res://script/canvas_layer.gd" id="4_waelg"]
-[ext_resource type="PackedScene" uid="uid://ddlsv556ohhmk" path="res://scene/Item.tscn" id="5_waelg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcqee"]
-size = Vector2(134, 132)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkq4d"]
+size = Vector2(138, 137)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qqr1"]
-size = Vector2(129.17775, 141.41565)
+[node name="Player" type="Node2D" unique_id=226554058]
 
-[node name="Node" type="Node" unique_id=2081921115]
+[node name="Node2D" type="Node2D" parent="." unique_id=1392626654]
+position = Vector2(0, -0.5)
+metadata/_edit_group_ = true
 
-[node name="NPC" parent="." unique_id=1303772977 instance=ExtResource("3_waelg")]
-position = Vector2(693, 411)
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1392243983 groups=["player"]]
-position = Vector2(132, 469)
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D" unique_id=1723922388 groups=["player"]]
+position = Vector2(0, 0.5)
 script = ExtResource("1_y30ri")
-metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1826573680]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/CharacterBody2D" unique_id=50532341 groups=["player"]]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_lkq4d")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterBody2D" unique_id=1947634197]
 texture = ExtResource("2_y30ri")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=170475335]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_vcqee")
-
-[node name="Ground" type="StaticBody2D" parent="." unique_id=711051139]
-position = Vector2(574, 612)
-scale = Vector2(9.142445, 0.25456858)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground" unique_id=1105372672]
-texture = ExtResource("2_y30ri")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1460675986]
-position = Vector2(0.16407776, -3.9282227)
-scale = Vector2(0.99999946, 0.99999946)
-shape = SubResource("RectangleShape2D_7qqr1")
-
-[node name="Wall_Right" type="StaticBody2D" parent="." unique_id=616755897]
-position = Vector2(1128, 309)
-rotation = 1.5603534
-scale = Vector2(9.142445, 0.25456858)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Wall_Right" unique_id=1500814920]
-texture = ExtResource("2_y30ri")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Right" unique_id=1391825078]
-position = Vector2(0.16407776, -3.9282227)
-scale = Vector2(0.99999946, 0.99999946)
-shape = SubResource("RectangleShape2D_7qqr1")
-
-[node name="Wall_Left" type="StaticBody2D" parent="." unique_id=1972031712]
-position = Vector2(0, 298.00003)
-rotation = 1.5603534
-scale = Vector2(9.142445, 0.25456858)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Wall_Left" unique_id=1948943338]
-texture = ExtResource("2_y30ri")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Left" unique_id=1449119844]
-position = Vector2(0.16407776, -3.9282227)
-scale = Vector2(0.99999946, 0.99999946)
-shape = SubResource("RectangleShape2D_7qqr1")
-
-[node name="Item" parent="." unique_id=2026467436 instance=ExtResource("5_waelg")]
-
-[node name="layer" type="CanvasLayer" parent="." unique_id=196151171]
-script = ExtResource("4_waelg")
-
-[node name="ColorRect" type="ColorRect" parent="layer" unique_id=1432224164]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="layer" unique_id=2104847526]
-visible = false
-texture_filter = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "Fuck You!!!!"

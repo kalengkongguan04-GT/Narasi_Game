@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://bu70e17sovlvu"]
+
+[ext_resource type="Texture2D" uid="uid://co1n3sdp7chwl" path="res://icon.svg" id="1_gycaw"]
+[ext_resource type="Script" uid="uid://d11n4dp3nyhhb" path="res://script/Door.gd" id="2_4wspe"]
+[ext_resource type="Script" uid="uid://v4auss35lncw" path="res://script/Level.gd" id="3_ydvtk"]
+[ext_resource type="PackedScene" uid="uid://1j34ppc8w0fw" path="res://scene/Player.tscn" id="4_gpifu"]
+[ext_resource type="PackedScene" uid="uid://ddlsv556ohhmk" path="res://scene/Item.tscn" id="5_brnr8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wspe"]
+size = Vector2(129.17775, 141.41565)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydvtk"]
+size = Vector2(129.17775, 141.41565)
+
+[node name="Room1" type="Node2D" unique_id=1144989221]
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=422966546]
+position = Vector2(574, 612)
+scale = Vector2(9.142445, 0.25456858)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground" unique_id=35657316]
+texture = ExtResource("1_gycaw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=339728602]
+position = Vector2(0.16407776, -3.9282227)
+scale = Vector2(0.99999946, 0.99999946)
+shape = SubResource("RectangleShape2D_4wspe")
+
+[node name="Wall_Right" type="StaticBody2D" parent="." unique_id=2033773672]
+position = Vector2(1128, 309)
+rotation = 1.5603534
+scale = Vector2(9.142445, 0.25456858)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall_Right" unique_id=197016588]
+texture = ExtResource("1_gycaw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Right" unique_id=1630238248]
+position = Vector2(0.16407776, -3.9282227)
+scale = Vector2(0.99999946, 0.99999946)
+shape = SubResource("RectangleShape2D_4wspe")
+
+[node name="Wall_Left" type="StaticBody2D" parent="." unique_id=1701949588]
+position = Vector2(0, 298.00003)
+rotation = 1.5603534
+scale = Vector2(9.142445, 0.25456858)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall_Left" unique_id=1369537600]
+texture = ExtResource("1_gycaw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Left" unique_id=369327268]
+position = Vector2(0.16407776, -3.9282227)
+scale = Vector2(0.99999946, 0.99999946)
+shape = SubResource("RectangleShape2D_4wspe")
+
+[node name="Door-1" type="Area2D" parent="." unique_id=709724614]
+script = ExtResource("2_4wspe")
+target_scene = "uid://daoeg1yrtiqjf"
+target_spawn = "Spawn_1"
+
+[node name="Sprite2D" type="Sprite2D" parent="Door-1" unique_id=393205366]
+position = Vector2(1060, 423.00003)
+rotation = 1.5603534
+scale = Vector2(2.471999, 0.77746284)
+texture = ExtResource("1_gycaw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door-1" unique_id=806581116]
+position = Vector2(1063.0581, 423.37372)
+rotation = 1.5603534
+scale = Vector2(2.4719975, 0.7774624)
+shape = SubResource("RectangleShape2D_ydvtk")
+
+[node name="PromptLabel" type="Label" parent="Door-1" unique_id=1633446982]
+offset_left = 1025.0
+offset_top = 217.0
+offset_right = 1065.0
+offset_bottom = 245.0
+rotation = 0.0030682087
+scale = Vector2(1.7485193, 1.3221006)
+theme_override_font_sizes/font_size = 20
+text = "[E]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spawn_1" type="Marker2D" parent="." unique_id=1138301648]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(930, 514)
+gizmo_extents = 36.3
+script = ExtResource("3_ydvtk")
+
+[node name="Item" parent="." unique_id=2026467436 instance=ExtResource("5_brnr8")]
+position = Vector2(-51, -34)
+
+[node name="Player" parent="." unique_id=226554058 instance=ExtResource("4_gpifu")]
+position = Vector2(149, 492)
