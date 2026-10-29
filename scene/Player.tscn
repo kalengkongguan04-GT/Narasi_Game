@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b72qxhrk6x88n" path="res://script/Player_Move.gd" id="1_y30ri"]
 [ext_resource type="Texture2D" uid="uid://co1n3sdp7chwl" path="res://icon.svg" id="2_y30ri"]
 [ext_resource type="PackedScene" uid="uid://bfc4eq4gw3xpw" path="res://scene/npc.tscn" id="3_waelg"]
+[ext_resource type="PackedScene" uid="uid://ddlsv556ohhmk" path="res://scene/Item.tscn" id="4_waelg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vcqee"]
 size = Vector2(134, 132)
@@ -15,8 +16,8 @@ size = Vector2(129.17775, 141.41565)
 [node name="NPC" parent="." unique_id=1303772977 instance=ExtResource("3_waelg")]
 position = Vector2(693, 411)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1392243983]
-position = Vector2(97, 481)
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1392243983 groups=["player"]]
+position = Vector2(132, 469)
 script = ExtResource("1_y30ri")
 metadata/_edit_group_ = true
 
@@ -67,3 +68,5 @@ texture = ExtResource("2_y30ri")
 position = Vector2(0.16407776, -3.9282227)
 scale = Vector2(0.99999946, 0.99999946)
 shape = SubResource("RectangleShape2D_7qqr1")
+
+[node name="Item" parent="." unique_id=2026467436 instance=ExtResource("4_waelg")]
