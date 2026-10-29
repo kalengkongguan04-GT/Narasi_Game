@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://0hufwjr5yiwa"]
 
-[ext_resource type="Script" uid="uid://dqhnvxe6pq86" path="res://script/mainmenu.gd" id="1_cwr5t"]
+[ext_resource type="Script" uid="uid://dqhnvxe6pq86" path="res://script/Mainmenu.gd" id="1_cwr5t"]
 
 [node name="mainmenu" type="Control" unique_id=1666083025]
 layout_mode = 3
@@ -10,6 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cwr5t")
+game_scene = "uid://bu70e17sovlvu"
 
 [node name="CanvasLayer" type="TextureRect" parent="." unique_id=2094282471]
 layout_mode = 1

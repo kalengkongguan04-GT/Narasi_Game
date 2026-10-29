@@ -29,4 +29,5 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 		player_in_range = false
 		GameState.next_spawn = target_spawn
+		SaveManager.save_game(target_scene)
 		get_tree().change_scene_to_file.call_deferred(target_scene)
