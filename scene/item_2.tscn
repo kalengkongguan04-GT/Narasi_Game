@@ -8,9 +8,9 @@ size = Vector2(140, 139)
 
 [node name="Item_2" type="Area2D" unique_id=1709886450]
 script = ExtResource("1_nw2oq")
-item_id = "2"
+item_id = "5"
 item_name = "Tes#2"
-score_value = 3
+score_value = 1
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1531930942]

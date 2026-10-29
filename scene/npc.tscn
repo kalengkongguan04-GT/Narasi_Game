@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dddsyg718o41s" path="res://NPC/Idle-Sheet.png" id="1_54ctn"]
 [ext_resource type="Script" uid="uid://dgipi5vektr0i" path="res://script/npc.gd" id="1_ab2no"]
 [ext_resource type="Texture2D" uid="uid://cy8l4qtfbbwn" path="res://NPC/Run-Sheet.png" id="2_ab2no"]
+[ext_resource type="Script" uid="uid://c23hr3xihcgu5" path="res://script/NPC_Logic.gd" id="4_8oust"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8oust"]
 atlas = ExtResource("1_54ctn")
@@ -90,6 +91,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(19.333334, 29.333336)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkq4d"]
+size = Vector2(19.333334, 29.333336)
+
 [node name="NPC" type="CharacterBody2D" unique_id=1303772977]
 scale = Vector2(3, 3)
 script = ExtResource("1_ab2no")
@@ -103,3 +107,36 @@ frame_progress = 0.32565787
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1336897229]
 position = Vector2(0.33333302, 1.3333337)
 shape = SubResource("RectangleShape2D_xrivr")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2041509708]
+script = ExtResource("4_8oust")
+npc_id = "1"
+npc_name = "Willy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=977998920]
+position = Vector2(0.33333302, 1.3333337)
+shape = SubResource("RectangleShape2D_lkq4d")
+
+[node name="PromptLabel" type="Label" parent="Area2D" unique_id=1933033062]
+offset_left = -5.333333
+offset_top = -25.333332
+offset_right = 34.666668
+offset_bottom = -2.333332
+scale = Vector2(0.58666635, 0.50666666)
+text = "[E]"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Area2D" unique_id=288072413]
+
+[node name="PanelContainer" type="PanelContainer" parent="Area2D/CanvasLayer" unique_id=1575724710]
+offset_left = -99.99999
+offset_top = -166.99998
+offset_right = -59.999992
+offset_bottom = -126.999985
+scale = Vector2(4.957556, 3.1629863)
+
+[node name="Label" type="Label" parent="Area2D/CanvasLayer/PanelContainer" unique_id=2034368410]
+layout_mode = 2
+text = "hallo"
+horizontal_alignment = 1
+vertical_alignment = 1

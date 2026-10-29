@@ -30,6 +30,8 @@ shape = SubResource("RectangleShape2D_lkq4d")
 [node name="PromptLabel" type="Label" parent="EndingTrigger" unique_id=1192912530]
 offset_right = 40.0
 offset_bottom = 23.0
+text = "[E]
+"
 
 [node name="Spawns" type="Node2D" parent="." unique_id=770490301]
 position = Vector2(1024, 560)

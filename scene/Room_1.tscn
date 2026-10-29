@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://1j34ppc8w0fw" path="res://scene/Player.tscn" id="4_gpifu"]
 [ext_resource type="PackedScene" uid="uid://c51dkqwoar3bs" path="res://scene/item_2.tscn" id="5_3ljv3"]
 [ext_resource type="PackedScene" uid="uid://bmyk3ccrdnlg2" path="res://scene/item_1.tscn" id="5_o1gum"]
+[ext_resource type="PackedScene" uid="uid://bfc4eq4gw3xpw" path="res://scene/npc.tscn" id="7_o1gum"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4wspe"]
 size = Vector2(129.17775, 141.41565)
@@ -100,3 +101,6 @@ position = Vector2(126, 510)
 modulate = Color(1, 0, 0, 1)
 position = Vector2(930, 514)
 gizmo_extents = 36.3
+
+[node name="NPC" parent="." unique_id=1303772977 instance=ExtResource("7_o1gum")]
+position = Vector2(655, 544)
