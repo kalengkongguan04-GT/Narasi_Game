@@ -41,5 +41,5 @@ metadata/_edit_group_ = true
 modulate = Color(1, 0, 0, 1)
 gizmo_extents = 30.0
 
-[node name="Player" parent="." unique_id=226554058 instance=ExtResource("4_smnqn")]
+[node name="Player" parent="." unique_id=226554058 groups=["player"] instance=ExtResource("4_smnqn")]
 position = Vector2(838, 77)

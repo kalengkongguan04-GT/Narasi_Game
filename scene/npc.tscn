@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dck781uqixr72"]
+[gd_scene format=3 uid="uid://bfc4eq4gw3xpw"]
 
 [ext_resource type="Texture2D" uid="uid://dddsyg718o41s" path="res://NPC/Idle-Sheet.png" id="1_54ctn"]
 [ext_resource type="Script" uid="uid://dgipi5vektr0i" path="res://script/npc.gd" id="1_ab2no"]

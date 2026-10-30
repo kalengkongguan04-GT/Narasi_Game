@@ -1,7 +1,7 @@
 #BUAT NYIMPEN DATA GAME KIBALTNYA SYSTEM
 extends Node
 
-const GOOD_REQUIRED_ITEMS: Array[String] = ["Tes_1", "Tes#2"]
+const GOOD_REQUIRED_ITEMS: Array[String] = []
 const GOOD_MIN_SCORE := 5
 const BAD_MAX_SCORE := 0
 
@@ -31,19 +31,20 @@ func get_flag(id: String) -> bool:
 	return flags.get(id, false)
 
 func get_ending() -> String:
-	var has_all_required := true
-	for id: String in GOOD_REQUIRED_ITEMS:
-		if not has_item(id):
-			has_all_required = false
-
-	if has_all_required and score >= GOOD_MIN_SCORE:
+	if get_flag("jujur_soal_surat") and score >= GOOD_MIN_SCORE:
 		return "good"
-	if score <= BAD_MAX_SCORE:
+	if get_flag("menyembunyikan_surat") or score <= BAD_MAX_SCORE:
 		return "bad"
 	return "neutral"
-
+	
 func reset() -> void:
 	items.clear()
 	flags.clear()
 	score = 0
 	next_spawn = ""
+
+func add_score_once(id: String, value: int) -> void:
+	if get_flag(id):
+		return
+	set_flag(id)
+	score += value

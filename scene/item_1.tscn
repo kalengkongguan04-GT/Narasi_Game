@@ -10,7 +10,7 @@ size = Vector2(140, 139)
 script = ExtResource("1_q35qr")
 item_id = "1"
 item_name = "Tes_1"
-score_value = 4
+score_value = 3
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1050207743]

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bfc4eq4gw3xpw"]
+[gd_scene format=3 uid="uid://1j34ppc8w0fw"]
 
 [ext_resource type="Script" uid="uid://b72qxhrk6x88n" path="res://script/Player_Move.gd" id="1_8oust"]
 [ext_resource type="Texture2D" uid="uid://co1n3sdp7chwl" path="res://icon.svg" id="2_pesj1"]
@@ -7,7 +7,6 @@
 size = Vector2(134, 132)
 
 [node name="player" type="CharacterBody2D" unique_id=506976123]
-position = Vector2(97, 481)
 script = ExtResource("1_8oust")
 metadata/_edit_group_ = true
 
