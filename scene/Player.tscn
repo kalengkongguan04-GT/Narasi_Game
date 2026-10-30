@@ -1,24 +1,19 @@
-[gd_scene format=3 uid="uid://1j34ppc8w0fw"]
+[gd_scene format=3 uid="uid://bfc4eq4gw3xpw"]
 
-[ext_resource type="Script" uid="uid://b72qxhrk6x88n" path="res://script/Player_Move.gd" id="1_y30ri"]
-[ext_resource type="Texture2D" uid="uid://co1n3sdp7chwl" path="res://icon.svg" id="2_y30ri"]
+[ext_resource type="Script" uid="uid://b72qxhrk6x88n" path="res://script/Player_Move.gd" id="1_8oust"]
+[ext_resource type="Texture2D" uid="uid://co1n3sdp7chwl" path="res://icon.svg" id="2_pesj1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkq4d"]
-size = Vector2(138, 137)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcqee"]
+size = Vector2(134, 132)
 
-[node name="Player" type="Node2D" unique_id=226554058]
-
-[node name="Node2D" type="Node2D" parent="." unique_id=1392626654]
-position = Vector2(0, -0.5)
+[node name="player" type="CharacterBody2D" unique_id=506976123]
+position = Vector2(97, 481)
+script = ExtResource("1_8oust")
 metadata/_edit_group_ = true
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D" unique_id=1723922388 groups=["player"]]
-position = Vector2(0, 0.5)
-script = ExtResource("1_y30ri")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=715189205]
+texture = ExtResource("2_pesj1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/CharacterBody2D" unique_id=50532341 groups=["player"]]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_lkq4d")
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterBody2D" unique_id=1947634197]
-texture = ExtResource("2_y30ri")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=157264583]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_vcqee")

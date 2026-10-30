@@ -1,5 +1,4 @@
 #BUAT NYIMPEN DATA GAME KIBALTNYA SYSTEM
-
 extends Node
 
 const GOOD_REQUIRED_ITEMS: Array[String] = ["Tes_1", "Tes#2"]
